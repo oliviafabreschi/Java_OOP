@@ -11,7 +11,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello degree calcuator!");
+        System.out.println("Degree convertor, from farenheit to celcius!");
 
         double farenheit = 0.0;
         double celcius = 0.0;
