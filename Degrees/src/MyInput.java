@@ -36,12 +36,11 @@ public class MyInput {
      *
      * @return Returnerar det l�sta talet i form av en "int"
      */
-    public int readInt()
+/*    public int readInt()
     {
         return Integer.parseInt(readString());
     }
-
-    /**
+  */  /**
      * L�ser ett decimaltal fr�n tangentbordet.
      *
      * @return Returnerar det l�sta talet i form av en "double"
