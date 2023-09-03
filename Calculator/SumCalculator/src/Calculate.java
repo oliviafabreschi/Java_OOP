@@ -1,7 +1,14 @@
+
 public class Calculate {
 
     private int sum = 0;
-    public int sumDigits(int n){
+
+    /**
+     *
+     * @param n number to input from user
+     * assigns to sum variable the sum of all individual chars
+     */
+    public void sumDigits(int n){
        //input in string version
         String valueString = String.valueOf(n);
         //length of string input
@@ -13,10 +20,18 @@ public class Calculate {
             int characterInt = Character.getNumericValue(characterChar);
             this.sum += characterInt;
         }
-        return sum;
+
     }
 
-    public void showResult(){
-        System.out.printf("the result is %d", sum);
+    /**
+     * Prints the result on the terminal
+     * @param n takes parameter to only show it if the number has gone through
+     *          the program, i.e. isn't still -1
+     */
+    public void showResult(int n){
+        if (n != -1){
+            System.out.printf("the result is %d", sum);
+        }
+
     }
 }
