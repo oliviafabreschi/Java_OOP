@@ -1,4 +1,12 @@
-
+/**
+ * A program that show the sum of all entered digits from an int
+ * that a user feeds into the program.
+ * the calculation is done by "sumDigits" method
+ *
+ * @author: Olivia Fabreschi
+ * @version: September 2023
+ *
+ */
 public class Calculate {
 
     private int sum = 0;
