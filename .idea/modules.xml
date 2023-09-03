@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Calculator/Calculator.iml" filepath="$PROJECT_DIR$/Calculator/Calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/Degrees/Degrees.iml" filepath="$PROJECT_DIR$/Degrees/Degrees.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_continuation_course_2023.iml" filepath="$PROJECT_DIR$/Java_continuation_course_2023.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Calculator/SumCalculator/SumCalculator.iml" filepath="$PROJECT_DIR$/Calculator/SumCalculator/SumCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SumCalculator/SumCalculator.iml" filepath="$PROJECT_DIR$/SumCalculator/SumCalculator.iml" />
     </modules>
   </component>
 </project>
