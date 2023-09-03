@@ -1,9 +1,9 @@
 public class Rectangle {
 
-    private int width;
-    private int length;
+    private final int width;
+    private final int length;
 
-    private String colour;
+    private final String colour;
     private int dimensions;
 
     public Rectangle(int width, int length, String colour){

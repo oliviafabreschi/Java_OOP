@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UserInput {
 
-    private Integer numberInput = 0;
+    private Integer numberInput;
     private String userInput = "";
     /**
      * Shoes welcome message on screen initially
@@ -10,29 +10,29 @@ public class UserInput {
     public void welcomeMessage(){
         System.out.printf("%nThis calculator calculates the sum of individual ");
         System.out.println("numbers in an entered integer. E.g. 23 -> 2+3 = 5." );
-        System.out.println("Press n to exit");
+        System.out.println("Type exit to exit");
 
     }
 
     /**
      * Scans in the number to be calculated from the user
      * Checks if it is a valid input or not
-     * Loops over input until system is exited by "n"
+     * Loops over input until system is exited by "exit"
      * Returns the number in Int format, for the getter method
      */
     public void setInput(){
         Scanner scanner = new Scanner(System.in);
-        System.out.printf("%nEnter integer to be calculated, or press \"n\" to exit: ");
+        System.out.printf("%nEnter integer to be calculated, or type \"exit\" to exit: ");
         userInput = scanner.nextLine();
     }
 
     public void setNumber(){
-        if (userInput.equals("n")){
-            this.numberInput = -2;
+        if (userInput.equals("exit")){
+            exitProgram();
         }
         else if (!userInput.matches("\\d+")){
             System.out.print("Not a valid input, try again");
-            this.numberInput = -1;
+            //this.numberInput = null;
         }
         else
             this.numberInput = Integer.valueOf(userInput);
@@ -42,17 +42,9 @@ public class UserInput {
      * getter method to get to private number
      * @return the original number input to be used in calculations
      */
-    public int getNumber(){
+    public Integer getNumber(){
         return numberInput;
 
-    }
-
-    /**
-     * getter method to get user Input in string format
-     * @return user input i string format
-     */
-    public String getUserInput(){
-        return userInput;
     }
 
     public void exitProgram(){

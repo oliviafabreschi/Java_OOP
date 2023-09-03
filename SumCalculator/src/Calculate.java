@@ -8,7 +8,7 @@ public class Calculate {
      * @param n number to input from user
      * assigns to sum variable the sum of all individual chars
      */
-    public void sumDigits(int n){
+    public void sumDigits(Integer n){
        //input in string version
         String valueString = String.valueOf(n);
         //length of string input
@@ -23,13 +23,17 @@ public class Calculate {
 
     }
 
+    public void reset(){
+        sum = 0;
+    }
+
     /**
      * Prints the result on the terminal
      * @param n takes parameter to only show it if the number has gone through
      *          the program, i.e. isn't still -1
      */
-    public void showResult(int n){
-        if (n != -1){
+    public void showResult(Integer n){
+        if (n != null){
             System.out.printf("the result is %d", sum);
         }
 

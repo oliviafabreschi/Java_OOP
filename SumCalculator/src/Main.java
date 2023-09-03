@@ -16,26 +16,24 @@ public class Main {
     public static void main(String[] args) {
         //creating the object from the input classes
         UserInput input = new UserInput();
+        Calculate calculate = new Calculate();
 
         //only printing message once
         input.welcomeMessage();
         //loops over inputs until exiting program based on menu item "n"
         while (true) {
-            //creating object here so that sum resets to 0 each time
-            Calculate calculate = new Calculate();
+            //resetting sum to 0 each time
+            calculate.reset();
             //setting and getting the user input, only parsing to int where applicable
             input.setInput();
-            if (input.getUserInput().equals("n"))
-                input.exitProgram();
-            else{
-                input.setNumber();
-                int number = input.getNumber();
-                //calculating and showing results
-                calculate.sumDigits(number);
-                calculate.showResult(number);
-            }
+            input.setNumber();
+            Integer number = input.getNumber();
+            //calculating and showing results
+            calculate.sumDigits(number);
+            calculate.showResult(number);
         }
 
-
     }
+
+
 }

@@ -13,11 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef22c7e7-9d8f-4047-8dcc-ca8fac537c88" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rectangle/Rectangle.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rectangle/src/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rectangle/src/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Rectangle/src/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SumCalculator/src/Calculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/SumCalculator/src/Calculate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SumCalculator/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SumCalculator/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SumCalculator/src/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/SumCalculator/src/UserInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (3)">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Degrees" />
@@ -119,8 +119,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -191,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693730559902</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1693732053148</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693732053148</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
