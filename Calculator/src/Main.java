@@ -10,6 +10,7 @@
  */
 
 public class Main {
+    //Create an object of Input called input.
     static Input input = new Input();
     public static void main(String[] args) {
         //instantiating the class
