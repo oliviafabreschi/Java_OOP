@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Calculator/Calculator.iml" filepath="$PROJECT_DIR$/Calculator/Calculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Degrees/Degrees.iml" filepath="$PROJECT_DIR$/Degrees/Degrees.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/Calculator/Calculator.iml" filepath="$PROJECT_DIR$/Lab1/Calculator/Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/Degrees/Degrees.iml" filepath="$PROJECT_DIR$/Lab1/Degrees/Degrees.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_OOP.iml" filepath="$PROJECT_DIR$/Java_OOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Rectangle/Rectangle.iml" filepath="$PROJECT_DIR$/Rectangle/Rectangle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SumCalculator/SumCalculator.iml" filepath="$PROJECT_DIR$/SumCalculator/SumCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/Lab1.iml" filepath="$PROJECT_DIR$/Lab1/Lab1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/Rectangle/Rectangle.iml" filepath="$PROJECT_DIR$/Lab1/Rectangle/Rectangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/SumCalculator/SumCalculator.iml" filepath="$PROJECT_DIR$/Lab1/SumCalculator/SumCalculator.iml" />
     </modules>
   </component>
 </project>
