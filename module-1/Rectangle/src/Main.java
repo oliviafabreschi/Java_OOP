@@ -1,8 +1,8 @@
 /**
  * Program that creates objects of a rectangle
  * Colour can be set afterwards, width and height not able to change
- * author: Olivia Fabreschi
- * version: September 2023
+ * @author: Olivia Fabreschi
+ * @version: September 2023
  */
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
 /**
  * Rectangle class to set dimensions and colour
  * getters and setters
- * author: Olivia Fabreschi
- * version: September 2023
+ * @author: Olivia Fabreschi
+ * @version: September 2023
  *
  */
 public class Rectangle {
@@ -58,7 +58,7 @@ public class Rectangle {
         System.out.println("width is "+ width);
         System.out.println("length is "+ length);
         System.out.println("colour is " + colour);
-        System.out.printf("dimensions are "+ dimensions+ "%n%n");
+        System.out.printf("dimensions are "+ getDimensions()+ "%n%n");
 
     }
 
