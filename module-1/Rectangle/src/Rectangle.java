@@ -15,14 +15,26 @@ public class Rectangle {
 
     /**
      * constructor for dimensions, not to be changeable
+     * if colour not known
      * @param width of rectangle
      * @param length of rectangle
      */
     public Rectangle(int width, int length){
+        //Because length and width are `final`, they _must_ be set in the constructor
     this.width = width;
     this.length = length;
     }
 
+    /**
+     * constructor for dimensions, not to be changeable
+     * @param width of rectangle
+     * @param length of rectangle
+     */
+    public Rectangle(int width, int length,  String colour){
+        this.width = width;
+        this.length = length;
+        setColour(colour);
+    }
 
     /**
      * method to be able to set the colour of the rectangle afterwards
