@@ -9,7 +9,7 @@ public class Rectangle {
 //
     private final int width;
     private final int length;
-    private String colour;
+    private static String colour;
 
     private int dimensions;
 
