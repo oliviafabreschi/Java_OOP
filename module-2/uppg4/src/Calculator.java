@@ -37,6 +37,7 @@ public class Calculator extends JFrame implements ItemListener {
         //making visible
         setSize(400, 300);
         setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
 
@@ -49,16 +50,16 @@ public class Calculator extends JFrame implements ItemListener {
                 case 0:
                     break;
                 case 1:
-                    calculation.PlusCalcuation();
+                    calculation.PlusCalcuation(number1, number2);
                     break;
                 case 2:
-                    calculation.MinusCalcuation();
+                    calculation.MinusCalcuation(number1, number2);
                     break;
                 case 3:
-                    calculation.MultiplyCalcuation();
+                    calculation.MultiplyCalcuation(number1, number2);
                     break;
                 case 4:
-                    calculation.DivisionCalcuation();
+                    calculation.DivisionCalcuation(number1, number2);
                     break;
 
 
