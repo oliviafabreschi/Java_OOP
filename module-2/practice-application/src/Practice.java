@@ -1,7 +1,9 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import javax.swing.*;
+
 
 public class Practice extends JFrame implements ActionListener {
 
@@ -18,14 +20,20 @@ public class Practice extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent event)
     {
-        if ((nrOfPresses % 3) == 0){
+        Random random = new Random();
+        int redColor = random.nextInt(255);
+        int greenColor = random.nextInt(255);
+        int blueColor = random.nextInt(255);
+
+        contentPane.setBackground(new Color(redColor, greenColor,blueColor));
+       /* if ((nrOfPresses % 3) == 0){
             contentPane.setBackground(Color.RED);
         }
         else if ((nrOfPresses % 3) == 2){
             contentPane.setBackground(Color.CYAN);
         }
         else
-            contentPane.setBackground(Color.PINK);
+            contentPane.setBackground(Color.PINK);*/
         label.setText("colour changing!");
         nrOfPresses++;
     }
