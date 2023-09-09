@@ -7,12 +7,17 @@ import java.awt.event.ItemListener;
 import java.util.EventObject;
 
 public class Calculator extends JFrame implements ItemListener {
+    private int result = 0;
+    private String resultString = "";
     FlowLayout flowLayout = new FlowLayout();
     Container contentPane = getContentPane();
     private JComboBox comboBox = new JComboBox();
     private JLabel label = new JLabel("Enter numbers to be calculated");
-    private JTextField number1 = new JTextField("   ");
+    private JTextField number1 = new JTextField(resultString);
     private JTextField number2 = new JTextField("   ");
+    private JLabel labelResult = new JLabel("The result will show here");
+
+
 
     public Calculator(){
         //creating the content pane
@@ -32,14 +37,23 @@ public class Calculator extends JFrame implements ItemListener {
         contentPane.add(number1);
         contentPane.add(number2);
         contentPane.add(comboBox);
+        contentPane.add(labelResult);
+
+
+        number1.setPreferredSize(new Dimension(50, 30));
+        number2.setPreferredSize(new Dimension(50, 30));
 
         comboBox.addItemListener(this);
+
+
+
         //making visible
         setSize(400, 300);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
+
 
     public void itemStateChanged(ItemEvent e) {
         Calculations calculation = new Calculations();
@@ -50,16 +64,27 @@ public class Calculator extends JFrame implements ItemListener {
                 case 0:
                     break;
                 case 1:
-                    calculation.PlusCalcuation(number1, number2);
+                    result = calculation.PlusCalcuation(number1, number2);
+                    resultString = Integer.toString(result);
+                    labelResult.setText(resultString);
                     break;
                 case 2:
-                    calculation.MinusCalcuation(number1, number2);
+                    result =calculation.MinusCalcuation(number1, number2);
+                    resultString = Integer.toString(result);
+                    labelResult.setText(resultString);
+
                     break;
                 case 3:
-                    calculation.MultiplyCalcuation(number1, number2);
+                    result =calculation.MultiplyCalcuation(number1, number2);
+                    resultString = Integer.toString(result);
+                    labelResult.setText(resultString);
+
                     break;
                 case 4:
-                    calculation.DivisionCalcuation(number1, number2);
+                    result =calculation.DivisionCalcuation(number1, number2);
+                    resultString = Integer.toString(result);
+                    labelResult.setText(resultString);
+
                     break;
 
 
