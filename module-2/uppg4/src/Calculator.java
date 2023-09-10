@@ -1,11 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.EventObject;
 
+/**
+ * This class does the main GUI behind the calculator
+ *
+ * @author Olivia Fabreschi
+ * @Version Sep 2023
+ */
 public class Calculator extends JFrame implements ItemListener {
     private int result = 0;
     private String resultString = "";
@@ -18,8 +21,11 @@ public class Calculator extends JFrame implements ItemListener {
     private JLabel labelResult = new JLabel("The result will show here");
 
 
-
-    public Calculator(){
+    /**
+     * Main method for calculator GUI
+     * Sets up contentpane and adds components
+     */
+    public Calculator() {
         //creating the content pane
         contentPane.setLayout(flowLayout);
 
@@ -27,24 +33,25 @@ public class Calculator extends JFrame implements ItemListener {
         Color beige = new Color(255, 225, 230);
         contentPane.setBackground(beige);
 
+        //adding components to combobox
         comboBox.addItem("Choose calculation");
         comboBox.addItem("plus");
         comboBox.addItem("minus");
         comboBox.addItem("multiply");
         comboBox.addItem("division");
-
+        //adding components
         contentPane.add(label);
         contentPane.add(number1);
         contentPane.add(number2);
         contentPane.add(comboBox);
         contentPane.add(labelResult);
 
-
+        //adjusting
         number1.setPreferredSize(new Dimension(50, 30));
         number2.setPreferredSize(new Dimension(50, 30));
 
+        //adding listener to combobox for items
         comboBox.addItemListener(this);
-
 
 
         //making visible
@@ -54,7 +61,12 @@ public class Calculator extends JFrame implements ItemListener {
 
     }
 
-
+    /**
+     * Switch cases depending on which item of combox is selected
+     * calculation method called from Calculations class for each choice
+     *
+     * @param e the event to be processed
+     */
     public void itemStateChanged(ItemEvent e) {
         Calculations calculation = new Calculations();
         if ((e.getStateChange() == ItemEvent.SELECTED)) {
@@ -64,36 +76,97 @@ public class Calculator extends JFrame implements ItemListener {
                 case 0:
                     break;
                 case 1:
-                    result = calculation.PlusCalcuation(number1, number2);
-                    resultString = Integer.toString(result);
-                    labelResult.setText(resultString);
+                    //each case has a parsing check to check for valid input
+                    if (parsingCheckOK(number1, number2)) {
+                        //calls calculation method
+                        result = calculation.plusCalculation(number1, number2);
+                        setGUIResultText(result);
+                    }
+                    comboBox.setSelectedIndex(0);
                     break;
-                case 2:
-                    result =calculation.MinusCalcuation(number1, number2);
-                    resultString = Integer.toString(result);
-                    labelResult.setText(resultString);
 
+                case 2:
+                    if (parsingCheckOK(number1, number2)) {
+                        result = calculation.minusCalculation(number1, number2);
+                        setGUIResultText(result);
+                    }
+                    comboBox.setSelectedIndex(0);
                     break;
                 case 3:
-                    result =calculation.MultiplyCalcuation(number1, number2);
-                    resultString = Integer.toString(result);
-                    labelResult.setText(resultString);
-
+                    if (parsingCheckOK(number1, number2)) {
+                        result = calculation.multiplyCalculation(number1, number2);
+                        setGUIResultText(result);
+                    }
+                    comboBox.setSelectedIndex(0);
                     break;
                 case 4:
-                    result =calculation.DivisionCalcuation(number1, number2);
-                    resultString = Integer.toString(result);
-                    labelResult.setText(resultString);
-
+                    if (parsingCheckOK(number1, number2)) {
+                        //extra parsing check for divison for 0 in demoninator
+                        if (parsingCheckDivisionOK(number2)) {
+                            result = calculation.divisionCalculation(number1, number2);
+                            setGUIResultText(result);
+                        }
+                    }
+                    comboBox.setSelectedIndex(0);
                     break;
 
-
-
             }
+
 
         }
     }
 
+    /**
+     * Sets the text to be shown on the GUI
+     * @param result the integer of the final calculation
+     */
+    private void setGUIResultText(int result) {
+        resultString = Integer.toString(result);
+        //setting the result on the label
+        labelResult.setText("Result is " + resultString);
+        //setting the result in the "memory" for the user
+        number1.setText(resultString);
+        number2.setText(" ");
+    }
+
+    /**
+     * Checks that the input from the user is a valid int
+     * Boolean true or false to see if program should continue
+     * @param input1   the first digit from the JTextField
+     * @param input2   the second digit from the JTextField
+     * @return
+     */
+    public boolean parsingCheckOK(JTextField input1, JTextField input2) {
+        String nr1 = input1.getText().trim();
+        String nr2 = input2.getText().trim();
+        try {
+            Integer.parseInt(nr1);
+            Integer.parseInt(nr2);
+            return true;
+        } catch (Exception e) {
+            String errorMessage = " isn't a valid input. Try again";
+            labelResult.setText("'" + nr1 + "'" + " or " + "'" + nr2 + "'" + errorMessage);
+            return false;
+        }
+    }
+
+    /**
+     * Checks that the input from the user isn't 0 for the denominator
+     * Boolean true or false to see if program should continue
+     * @param input2   checks second nr input
+     * @return true or false to continue
+     */
+    public boolean parsingCheckDivisionOK(JTextField input2) {
+        String nr2 = input2.getText().trim();
+        String divisionErrorMessage;
+        if (String.valueOf(nr2.charAt(0)).equals("0")) {
+            divisionErrorMessage = " isn't a valid denominator. Try again";
+            labelResult.setText(nr2 + divisionErrorMessage);
+            return false;
+        }
+        return true;
+
+    }
 
 
 }
