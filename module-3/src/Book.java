@@ -30,7 +30,7 @@ public class Book extends Media {
      */
     @Override
     public void printWelcome(){
-        super.printWelcome();
+        System.out.println("Welcome!");
         System.out.println("Enter input for book. ");
     }
 

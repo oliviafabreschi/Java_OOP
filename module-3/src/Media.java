@@ -47,11 +47,9 @@ public abstract class Media {
     }
 
     /**
-     * this prints a welcome message, mainly so that it can be overwritten in the
-     * subclasses but shown before any of the constructor input is called from this super class,
+     * Abstract welcome class, so that it can be shown before any of the constructor input is called from this super class,
      * so that the overwritten message is shown first
      */
-    public void printWelcome(){
-        System.out.println("Welcome!");
-    }
+    public abstract void printWelcome();
+
 }

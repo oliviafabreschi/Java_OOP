@@ -37,7 +37,7 @@ public class CD extends Media {
      */
     @Override
     public void printWelcome(){
-        super.printWelcome();
+        System.out.println("Welcome!");
         System.out.println("Enter input below for CD. ");
     }
 
