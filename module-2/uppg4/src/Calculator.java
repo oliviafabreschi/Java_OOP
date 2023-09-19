@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.ActionListener;
+
 
 /**
  * This class does the main GUI behind the calculator
@@ -9,7 +12,7 @@ import java.awt.event.ItemListener;
  * @author Olivia Fabreschi
  * @Version Sep 2023
  */
-public class Calculator extends JFrame implements ItemListener {
+public class Calculator extends JFrame implements ItemListener, ActionListener {
     private int result = 0;
     private String resultString = "";
     FlowLayout flowLayout = new FlowLayout();
@@ -20,6 +23,7 @@ public class Calculator extends JFrame implements ItemListener {
     private JTextField number2 = new JTextField("   ");
     private JLabel labelResult = new JLabel("The result will show here");
 
+    private JButton memoryButton = new JButton("Memory");
 
     /**
      * Main method for calculator GUI
@@ -44,7 +48,9 @@ public class Calculator extends JFrame implements ItemListener {
         contentPane.add(number1);
         contentPane.add(number2);
         contentPane.add(comboBox);
+        contentPane.add(memoryButton);
         contentPane.add(labelResult);
+
 
         //adjusting
         number1.setPreferredSize(new Dimension(50, 30));
@@ -52,10 +58,13 @@ public class Calculator extends JFrame implements ItemListener {
 
         //adding listener to combobox for items
         comboBox.addItemListener(this);
+        //adding listener to memory button
+        memoryButton.addActionListener(this);
 
 
         //making visible
         setSize(400, 300);
+        labelResult.setPreferredSize(new Dimension(200, 50));
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -125,9 +134,25 @@ public class Calculator extends JFrame implements ItemListener {
         //setting the result on the label
         labelResult.setText("Result is " + resultString);
         //setting the result in the "memory" for the user
-        number1.setText(resultString);
+        number1.setText(" ");
         number2.setText(" ");
     }
+
+
+
+    /**
+     * action event for memory button
+     *
+     * @param e the event to be processed
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //setting the result in the "memory" for the user
+        number1.setText(resultString);
+        number2.setText(" ");
+
+    }
+
 
     /**
      * Checks that the input from the user is a valid int
@@ -144,8 +169,8 @@ public class Calculator extends JFrame implements ItemListener {
             Integer.parseInt(nr2);
             return true;
         } catch (Exception e) {
-            String errorMessage = " isn't a valid input. Try again";
-            labelResult.setText("'" + nr1 + "'" + " or " + "'" + nr2 + "'" + errorMessage);
+            String errorMessage = "Not a valid input. Try again";
+            labelResult.setText(errorMessage);
             return false;
         }
     }
@@ -167,6 +192,7 @@ public class Calculator extends JFrame implements ItemListener {
         return true;
 
     }
+
 
 
 }
