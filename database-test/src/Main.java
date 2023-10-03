@@ -3,19 +3,19 @@ import java.sql.*;
 /**
  * Code to connect to MySQL database
  * Requires mysql connectorj.jar to be added to library
- *
+ * Using configuration file for secure pw storage
  */
 public class Main {
     public static void main(String[] args) {
 
-        String username = "root";
-        //enter information
-        String password="";
+        String username = AppConfig.getDbUsername();
+        //enter information/get password from other source
+        String password= AppConfig.getDbPassword();
         //enter information
         String databaseName = "";
         //enter information
         String tableName = "";
-        String url = "jdbc:mysql://localhost:3306/"+databaseName;
+        String url = AppConfig.getDbName();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(url, username, password);
