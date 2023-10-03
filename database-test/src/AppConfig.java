@@ -7,7 +7,7 @@ public class AppConfig {
 
     static {
         properties = new Properties();
-        try (FileInputStream configFile = new FileInputStream("database-test/config.properties")) {
+        try (FileInputStream configFile = new FileInputStream("database-test/toignore/config.properties")) {
             properties.load(configFile);
         } catch (IOException e) {
             e.printStackTrace();
