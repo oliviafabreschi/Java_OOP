@@ -12,10 +12,10 @@ public class Main {
         //enter information/get password from other source
         String password= AppConfig.getDbPassword();
         //enter information
-        String databaseName = "";
+        String databaseName = AppConfig.getDbName();
         //enter information
-        String tableName = "";
-        String url = AppConfig.getDbName();
+        String tableName = AppConfig.gettableName();
+        String url = AppConfig.getdbURL();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(url, username, password);
@@ -23,7 +23,7 @@ public class Main {
             //can change out with whichever SQL statement
             String sqlQuery = "select * from "+databaseName +"." + tableName;
             //query to add data
-            String sqlQueryAddData = "insert into " + tableName+ " values (4, 'John', 'Smith') ";
+            String sqlQueryAddData = "insert into " + tableName+ " values (8, 'Lisa', 'Smith') ";
 
             //executing statement
             statement.executeUpdate(sqlQueryAddData);
@@ -44,4 +44,5 @@ public class Main {
             System.out.println(e);
         }
     }
+
 }
