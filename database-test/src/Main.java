@@ -3,7 +3,7 @@ import java.sql.*;
 /**
  * Code to connect to MySQL database
  * Requires mysql connectorj.jar to be added to library
- * Using configuration file for secure pw storage
+ * Using configuration file for secure credential storage
  */
 public class Main {
     public static void main(String[] args) {
